@@ -1,4 +1,7 @@
-# Data Processing Pipeline Setup
+# DSCI-644 Project 1 Part 1: Data Processing Pipeline Setup
+
+**Copyright Notice:** This project was developed by Zimeng Lyu for the RIT DSCI-644 course. Originally designed for GitLab CI/CD integration. All rights reserved. Usage as teaching material requires explicit permission from the author.
+
 
 ## 1. Prerequisites
 - Python 3.12
