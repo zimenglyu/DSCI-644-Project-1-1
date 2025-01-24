@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*/__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+*.venv
+*.env
+.env
+
+# IDEs
+.vscode/
+.idea/
+*.iml
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Spark
+spark-warehouse/
+temp_combined_output/
+metastore_db/
+derby.log
+
+# Project specific
+test_output.csv
+outputs.csv
+config_me.yaml
+
+# System files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,10 @@
+mysql_connector_path: ${MYSQL_CONNECTOR_PATH}
+mongodb_uri: ${MONGODB_URI}
+mysql_url: ${MYSQL_URL}
+mysql_table: ${MYSQL_TABLE}
+mysql_user: ${MYSQL_USER}
+mysql_password: ${MYSQL_PASSWORD}
+mongo_db: ${MONGO_DB}
+mongo_collection: ${MONGO_COLLECTION}
+csv_path: ${CSV_PATH}
+output_path: ${OUTPUT_PATH}

@@ -1,0 +1,56 @@
+image: python:3.12
+
+stages:
+  - format
+  - security
+  - files
+
+format_check:
+  stage: format
+  before_script:
+    - pip install black
+  script:
+    - echo "Checking code formatting with black..."
+    - black --check . || (echo "❌ Code formatting check failed. Please run 'black .' to format your code." && exit 1)
+    - echo "✅ Code formatting check passed!"
+  only:
+    - merge_requests
+    - main
+
+security_check:
+  stage: security
+  script:
+    - echo "Checking for sensitive files..."
+    - |
+      if git diff --name-only origin/main $CI_COMMIT_SHA | grep -q ".env$"; then
+        echo "❌ Error: .env file detected in commit. Remove it and add to .gitignore"
+        exit 1
+      fi
+    - echo "✅ No sensitive files found in commit!"
+  only:
+    - merge_requests
+    - main
+
+protected_files:
+  stage: files
+  script:
+    - echo "Checking protected files..."
+    - |
+      PROTECTED_FILES=("src/main.py" "tests/test.py" "requirements.txt" ".gitlab-ci.yml" "pytest.ini" "config.yaml")
+      for file in "${PROTECTED_FILES[@]}"; do
+        if git diff --name-only origin/main $CI_COMMIT_SHA | grep -q "$file"; then
+          echo "❌ Error: $file has been modified. This file is protected and should not be changed."
+          exit 1
+        fi
+      done
+    - echo "✅ No protected files were modified!"
+    - echo "Checking data_processor.py implementation..."
+    - |
+      if ! git diff --name-only origin/main $CI_COMMIT_SHA | grep -q "src/data_processor.py"; then
+        echo "❌ Error: No changes detected in data_processor.py. You must implement the required methods in this file."
+        exit 1
+      fi
+    - echo "✅ data_processor.py has been modified as required!"
+  only:
+    - merge_requests
+    - main
