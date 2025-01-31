@@ -1,8 +1,5 @@
 # DSCI-644 Project 1 Part 1: Data Processing Pipeline Setup
 
-**Copyright Notice:** This project was developed by Zimeng Lyu for the RIT DSCI-644 course. Originally designed for GitLab CI/CD integration. All rights reserved. Usage as teaching material requires explicit permission from the author.
-
-
 ## 1. Prerequisites
 - Python 3.12
 - OpenJDK 17
@@ -211,4 +208,15 @@ After implementing data_processor.py methods:
 2. Create merge request
 3. Run `black .` before your final commit
 4. Pull changes from the original repository before submitting
+
+## License and Usage Restrictions
+
+Copyright © 2025 Zimeng Lyu. All rights reserved.
+
+This project was developed by Zimeng Lyu for the RIT DSCI-644 course, originally designed for GitLab CI/CD integration. It is shared publicly for portfolio and learning purposes.
+
+🚫 **Usage Restriction:**  
+This project **may not** be used as teaching material in any form (including lectures, assignments, or coursework) without explicit written permission from the author.
+
+📩 For inquiries regarding usage permissions, please contact me.
 
